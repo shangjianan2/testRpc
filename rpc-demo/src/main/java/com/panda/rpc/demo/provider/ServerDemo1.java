@@ -28,7 +28,7 @@ public class ServerDemo1 {
 	public static void main(String[] args) throws InterruptedException {
 		Ihello helloService = new HelloImpl1();
 		Ihello helloService2=new HelloImpl1Version();
-		IregisterCenter registerCenter = new ZkRegisterCenter("192.168.40.14:2181");
+		IregisterCenter registerCenter = new ZkRegisterCenter("10.12.143.184:2181");
 		RpcServer rpcServer = new RpcServer(registerCenter, "127.0.0.1", 8888);
 		rpcServer.bindService(Arrays.asList(helloService,helloService2));
 		rpcServer.publish();
