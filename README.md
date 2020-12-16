@@ -1,4 +1,11 @@
+# 原作地址
+
+https://github.com/DavidDingXu/rpc
+
+这个代码初始版本不是我写的，是上面那个链接中的大神写的，我为了学习RPC对其进行了魔改。
+
 # rpc
+
 知乎文章地址：https://zhuanlan.zhihu.com/p/74098408
 
 手写一个简单rpc框架，示意图如下：
