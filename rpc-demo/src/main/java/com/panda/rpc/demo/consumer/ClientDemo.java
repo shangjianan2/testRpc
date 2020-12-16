@@ -12,8 +12,6 @@ package com.panda.rpc.demo.consumer;
 
 import com.panda.rpc.client.RpcClientProxy;
 import com.panda.rpc.demo.api.Ihello;
-import com.panda.rpc.discover.IServerDiscover;
-import com.panda.rpc.discover.ZkServerDiscover;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -26,8 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ClientDemo {
 
 	public static void main(String[] args) throws InterruptedException {
-		IServerDiscover serverDiscover = new ZkServerDiscover("10.12.143.184:2181");
-		RpcClientProxy rpcClientProxy = new RpcClientProxy(serverDiscover);
+		RpcClientProxy rpcClientProxy = new RpcClientProxy(null);
 
 		//测试服务版本
 		try {

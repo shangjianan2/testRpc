@@ -11,8 +11,6 @@
 package com.panda.rpc.demo.provider;
 
 import com.panda.rpc.demo.api.Ihello;
-import com.panda.rpc.register.IregisterCenter;
-import com.panda.rpc.register.ZkRegisterCenter;
 import com.panda.rpc.server.RpcServer;
 
 import java.util.Arrays;
@@ -28,8 +26,7 @@ public class ServerDemo1 {
 	public static void main(String[] args) throws InterruptedException {
 		Ihello helloService = new HelloImpl1();
 		Ihello helloService2=new HelloImpl1Version();
-		IregisterCenter registerCenter = new ZkRegisterCenter("10.12.143.184:2181");
-		RpcServer rpcServer = new RpcServer(registerCenter, "127.0.0.1", 8888);
+		RpcServer rpcServer = new RpcServer(null, "127.0.0.1", 8888);
 		rpcServer.bindService(Arrays.asList(helloService,helloService2));
 		rpcServer.publish();
 	}

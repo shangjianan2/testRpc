@@ -109,16 +109,5 @@ public class RpcServer {
 				});
 		bootstrap.bind(serviceIp, servicePort).sync();
 		log.info("成功启动服务,host:{},port:{}", serviceIp, servicePort);
-		//服务注册
-		handlerMap.keySet().forEach(serviceName -> {
-			try {
-				registerCenter.register(serviceName, serviceIp + ":" + servicePort);
-			} catch (Exception e) {
-
-				log.error("服务注册失败,e:{}", e.getMessage());
-				throw new RuntimeException("服务注册失败");
-			}
-			log.info("成功注册服务，服务名称：{},服务地址：{}", serviceName, serviceIp + ":" + servicePort);
-		});
 	}
 }

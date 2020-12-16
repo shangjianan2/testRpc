@@ -51,7 +51,7 @@ public class RpcInvocationHandler implements InvocationHandler {
 			if (null != version && !"".equals(version)) {
 				serviceName += "-" + version;
 			}
-			String servicePath = serverDiscover.disvover(serviceName);
+			String servicePath = "127.0.0.1:8888";
 			if (null == servicePath) {
 				log.error("并未找到服务地址,className:{}", serviceName);
 				throw new RuntimeException("未找到服务地址");
